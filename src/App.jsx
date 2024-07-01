@@ -4,6 +4,7 @@ import { PaymentProvider } from './Context/PaymentContext';
 import Login from './Components/Auth/Login';
 import Register from './Components/Auth/Register';
 import Dashboard from './Components/Dashboard/Dashboard';
+import Homepage from './pages/Homepage';
 
 
 const App = () => {
@@ -16,7 +17,8 @@ const App = () => {
           <Route path="/register" element={<Register/>} />
           {/* <PrivateRoute path="/dashboard" element={Dashboard} /> */}
           <Route path="/dashboard" element={<Dashboard/>} />
-          <Route path="/" element={<Login/>} />
+          {/* <Route path="/" element={<Login/>} /> */}
+          <Route path='/' element={<Homepage/>}/>
 
         </Routes>
       </PaymentProvider>
