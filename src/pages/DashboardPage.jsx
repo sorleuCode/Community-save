@@ -6,7 +6,6 @@ const DashboardPage = () => {
   return (
     <div style={{display: "flex"}}>
       <SidebarWithHeader/>
-      {/* <IoHomeOutline /> */}
       <Dashboard />
    
   
