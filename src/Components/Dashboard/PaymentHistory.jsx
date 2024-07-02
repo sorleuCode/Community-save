@@ -1,68 +1,46 @@
-import React from "react";
-import "./PaymentHistory.css";
-
+import React from 'react';
+import './PaymentHistory.css';
 
 const PaymentHistory = () => {
+  const payments = [
+    { date: 'Mar 1, 2023', amount: 100, status: 'Received' },
+    { date: 'Mar 1, 2023', amount: 100, status: 'Sent' },
+    { date: 'Mar 1, 2023', amount: 100, status: 'Received' },
+    { date: 'Mar 1, 2023', amount: 100, status: 'Sent' },
+    { date: 'Mar 1, 2023', amount: 100, status: 'Received' },
+    { date: 'Mar 1, 2023', amount: 100, status: 'Received' },
+  ];
 
   return (
-    <div>
-      <div className="main-cards">
-        <div className="card">
-          <div className="card-inner">
-            <h2>Total Earnings</h2>
-          </div>
-          <h1>#430.00</h1>
-        </div>
-        <div className="card">
-          <div className="card-inner">
-            <h2>Total Contributed</h2>
-          </div>
-          <h1>-#400.00</h1>
-        </div>
-      </div>
-
+    <div className="payment-history">
       <h2>Payment History</h2>
-
-     <div className="btn">
-     <button className="btn2">All</button>
-      <button className="btn2">Received</button>
-      <button className="btn2">Sent</button>
-     </div>
-
-
-  <table className="table">
+      <div className="filters">
+        <button className='btn'>All</button>
+        <button className='btn'>Received</button>
+        <button className='btn'>Sent</button>
+      </div>
     
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th>Amount</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <tr>
-          <td>01/01/2021</td>
-          <td>$100.00</td>
-          <td>Received</td>
-        </tr>
-        <tr>
-          <td>01/02/2021</td>
-          <td>$200.00</td>
-          <td>Sent</td>
-        </tr>
-        <tr>
-          <td>01/03/2021</td>
-          <td>$300.00</td>
-          <td>Received</td>
-        </tr>
-  
-          </tbody>
-    </table>
-
-
+    <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Amount</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {payments.map((payment, index) => (
+            <tr key={index}>
+              <td>{payment.date}</td>
+              <td>{payment.amount}</td>
+              <td className={payment.status.toLowerCase()}>{payment.status}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    
     </div>
   );
-};
+}
 
 export default PaymentHistory;
