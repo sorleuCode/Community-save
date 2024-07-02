@@ -1,4 +1,6 @@
-import React, { useState, useContext } from 'react';
+import  { useState, useContext } from 'react';
+import "../Auth/login.css"
+import { FaRegEyeSlash } from "react-icons/fa";
 import { PaymentContext } from '../../Context/PaymentContext';
 
 const Login = () => {
@@ -16,9 +18,30 @@ const Login = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-      <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+    <form className='style' onSubmit={handleSubmit}>
+      <p>Email Address</p>
+      <input type="email" placeholder='wabdont@gmail.com' 
+      value={email} onChange={(e) =>
+       setEmail(e.target.value)} required />
+
+              <div className="--dir-column">
+                <p></p>
+                <label htmlFor="password">password</label>
+                <FaRegEyeSlash
+                placeholder="Wabdont@gmail.com"
+                  values={password} onChange={(e) =>
+                    setPassword(e.target.value) 
+                  }
+                 
+                  />
+                 
+                </div>
+
+      <div className='remember-me'>
+      <p className='remember'>Remember me</p>
+      <p className='recover'>Recover password</p>
+      </div>
+
       <button type="submit">Login</button>
     </form>
   );
