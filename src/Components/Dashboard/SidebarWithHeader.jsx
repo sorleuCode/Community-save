@@ -12,7 +12,7 @@ const SidebarWithHeader = () => {
         <nav className="active">
           <ul  >
             <li > <IoHomeOutline className="icon"/> Dashboard</li>
-            <li > <IoBagHandleOutline className="icon"/> Ongoing Contributions</li>
+            <li > <IoBagHandleOutline className="icon"/>Ongoing Contributions</li>
             <li> <CiWallet className="icon"/> Wallets</li>
             <li> <FaHistory className="icon"/> History</li>
             <li> <PiHandWithdrawBold className="icon"/> Withdraw</li>
