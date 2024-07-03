@@ -1,9 +1,6 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import { PaymentProvider } from './Context/PaymentContext';
-import Login from './Components/Auth/Login';
-import Register from './Components/Auth/Register';
 import Dashboard from './Components/Dashboard/Dashboard';
+import PaymentHistory from './Components/Dashboard/PaymentHistory';
 import DashboardPage from './pages/DashboardPage';
 
 
@@ -22,9 +19,13 @@ const App = () => {
         </Routes>
       </PaymentProvider>
     </>
-
-
+function App() {
+  return (
+    <div className="App">
+      <Dashboard />
+      <PaymentHistory/>
+    </div>
   );
-};
+}
 
 export default App;
