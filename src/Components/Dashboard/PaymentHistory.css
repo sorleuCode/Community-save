@@ -1,0 +1,71 @@
+
+
+.dashboard {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 20px 0;
+ 
+  
+}
+
+.dashboard .earnings,
+.dashboard .contributed {
+  background-color: #DCFAED;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+}
+
+.dashboard .contributed .contribute {
+
+}
+
+.payment-history {
+  margin: 20px;
+}
+
+.payment-history .filters {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.payment-history .filters .btn {
+  width: 100px;
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: 1px solid #000;
+  background-color: transparent;
+  color: #000;
+  cursor: pointer;
+}
+
+
+.payment-history table {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  width: 60%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.payment-history table th {
+  background-color: #590240;
+  padding: 8px;
+  padding-bottom: 20px;
+}
+
+.payment-history table td {
+  background-color: #f3f4f6;
+}
+
+.payment-history table .received {
+  color: #0ead69;
+}
+
+.payment-history table .sent {
+  color: #590240;
+};
