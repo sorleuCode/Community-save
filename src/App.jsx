@@ -4,6 +4,7 @@ import { PaymentProvider } from './Context/PaymentContext';
 import Login from './Components/Auth/Login';
 import Register from './Components/Auth/Register';
 import Dashboard from './Components/Dashboard/Dashboard';
+import DashboardPage from './pages/DashboardPage';
 
 
 const App = () => {
@@ -15,7 +16,7 @@ const App = () => {
           <Route path="/login" element={<Login/>} />
           <Route path="/register" element={<Register/>} />
           {/* <PrivateRoute path="/dashboard" element={Dashboard} /> */}
-          <Route path="/dashboard" element={<Dashboard/>} />
+          <Route path="/dashboard" element={<DashboardPage/>} />
           <Route path="/" element={<Login/>} />
 
         </Routes>
