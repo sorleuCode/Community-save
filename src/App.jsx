@@ -1,35 +1,42 @@
+// import React from 'react';
+// import { BrowserRouter, Routes, Route } from 'react-router-dom';
+// import AdminDashboard from './Components/Dashboard/AdminDashboard';
+
+
+// const App = () => {
+//   return (
+//     <>
+     
+        
+//         <Routes>
+//          <Route path='/adminDashboard' element={<AdminDashboard/>} />
+
+
+//         </Routes>
+     
+//     </>
+//   );
+// };
+
+
+// export default App;
+
+
+
 import React from 'react';
-import Dashboard from './Components/Dashboard/Dashboard';
-import Homepage from './pages/Homepage';
-import PaymentHistory from './Components/Dashboard/PaymentHistory';
-import DashboardPage from './pages/DashboardPage';
+import AdminSidebar from './Components/Dashboard/AdminSidebar';
+import AdminDashboard from './Components/Dashboard/AdminDashboard';
+import './index.css'
+
 
 
 const App = () => {
   return (
-    <>
-      <PaymentProvider>
-        
-        <Routes>
-          <Route path="/login" element={<Login/>} />
-          <Route path="/register" element={<Register/>} />
-          {/* <PrivateRoute path="/dashboard" element={Dashboard} /> */}
-          <Route path="/dashboard" element={<Dashboard/>} />
-          {/* <Route path="/" element={<Login/>} /> */}
-          <Route path='/' element={<Homepage/>}/>
-          <Route path="/dashboard" element={<DashboardPage/>} />
-          <Route path="/" element={<Login/>} />
-
-        </Routes>
-      </PaymentProvider>
-    </>
-function App() {
-  return (
-    <div className="App">
-      <Dashboard />
-      <PaymentHistory/>
+    <div className="app">
+      <AdminSidebar />
+      <AdminDashboard />
     </div>
   );
-}
+};
 
 export default App;
