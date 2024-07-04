@@ -49,7 +49,6 @@ body {
 .sidebar nav ul li:hover {
   background-color: #5dd657;
   border-radius: 5px;
-  /* cursor: none; */
   color: white;
 
 }

@@ -124,7 +124,7 @@ const Dashboard = () => {
             {/* <p>
               Contact us at 080-1234-5678 or email us at 080-1234-5678@example.com
             </p> */}
-            <img src="Frame-32.jpg" alt="" />
+            {/* <img src="Frame-32.jpg" alt="" /> */}
           </div>
         </div>
       </section>
