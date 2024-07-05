@@ -3,6 +3,10 @@ import Dashboard from './Components/Dashboard/Dashboard';
 import Homepage from './pages/Homepage';
 import PaymentHistory from './Components/Dashboard/PaymentHistory';
 import DashboardPage from './pages/DashboardPage';
+import { PaymentProvider } from './Context/PaymentContext';
+import { Route, Routes } from 'react-router-dom';
+import Login from "../src/Components/Auth/Login"
+import Register from "../src/Components/Auth/Register"
 
 
 const App = () => {
@@ -17,19 +21,13 @@ const App = () => {
           <Route path="/dashboard" element={<Dashboard/>} />
           {/* <Route path="/" element={<Login/>} /> */}
           <Route path='/' element={<Homepage/>}/>
-          <Route path="/dashboard" element={<DashboardPage/>} />
+          {/* <Route path="/dashboard" element={<DashboardPage/>} /> */}
           <Route path="/" element={<Login/>} />
 
         </Routes>
       </PaymentProvider>
     </>
-function App() {
-  return (
-    <div className="App">
-      <Dashboard />
-      <PaymentHistory/>
-    </div>
-  );
+  )
 }
 
 export default App;

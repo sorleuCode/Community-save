@@ -2,6 +2,7 @@ import React from 'react';
 import './Herosection.css';
 import illustration from '../../../public/illustration.svg';
 import howItWork from "../../../public/howItWork.jpg" 
+import { Link } from 'react-router-dom';
 
 
 const Herosection = () => {
@@ -14,10 +15,10 @@ const Herosection = () => {
                     <p className="hero-description">
                         Join a community of like-minded individuals who share your passion for saving and investing.
                     </p>
-                    <button className="hero-button">Register</button>
+                    <Link to="/register"><button className="hero-button" >Register</button></Link>
                 </div>
                 <div className="hreo-illustration">
-                    <img src={illustration} alt="Illustration" />
+                    <img className='img' src={illustration} alt="Illustration" />
                 </div>
             </div>
             <div className='about-us'>
