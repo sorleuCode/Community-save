@@ -20,7 +20,7 @@ const Modal = ({ show, onClose, children }) => {
 
 const OngoingContributionsContent = () => {
   return (
-    <div>
+    <div className="ongoingcontribution">
       <h3>Ongoing Contributions</h3>
       <ul>
         <li>Contribution 1: $100</li>
@@ -54,6 +54,7 @@ const AddContributionContent = ({ onSubmit }) => {
             required
           />
         </div>
+
         <div>
           <label>Description:</label>
           <input
@@ -63,6 +64,7 @@ const AddContributionContent = ({ onSubmit }) => {
             required
           />
         </div>
+
         <div>
           <label>Date:</label>
           <input
@@ -82,10 +84,9 @@ const AdminSidebar = () => {
   const [modalContent, setModalContent] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  useEffect(() => {
-    // Set default content to Dashboard
-    setModalContent('Dashboard Content');
-  }, []);
+//   useEffect(() => {
+//     setModalContent('Dashboard Content');
+//   }, []);
 
   const handleOpenModal = (content) => {
     setModalContent(content);
@@ -128,9 +129,11 @@ const AdminSidebar = () => {
         <FaPiggyBank size={30} />
         <h2>iSave</h2>
       </div>
+
+     
       <nav className="active">
         <ul>
-          <li onClick={() => handleOpenModal('Dashboard Content')}><IoHomeOutline className="icon" />Dashboard</li>
+          {/* <li onClick={() => handleOpenModal('Dashboard Content')}><IoHomeOutline className="icon" />Dashboard</li> */}
           <li onClick={() => handleOpenModal('Ongoing Contributions Content')}><IoBagHandleOutline className="icon"/>Ongoing Contributions</li>
           <li onClick={() => handleOpenModal('Add Contribution Content')}><IoBagHandleOutline className="icon"/>Add New Contribution</li>
           <li onClick={() => handleOpenModal('Wallets Content')}><CiWallet className="icon"/>Wallets</li>
@@ -138,6 +141,9 @@ const AdminSidebar = () => {
           <li onClick={() => handleOpenModal('Withdraw Content')}><PiHandWithdrawBold className="icon"/>Withdraw</li>
         </ul>
       </nav>
+
+
+
       <div className="content">
         {isModalOpen ? (
           <Modal show={isModalOpen} onClose={handleCloseModal}>
@@ -145,11 +151,14 @@ const AdminSidebar = () => {
           </Modal>
         ) : (
           <div className="default-content">
-            {/* {renderModalContent()} */}
+            
           </div>
         )}
       </div>
+
+    
     </div>
+    
   );
 };
 

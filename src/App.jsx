@@ -1,3 +1,25 @@
+// import React from 'react';
+// import AdminDashboard from './Components/Dashboard/AdminDashboard';
+
+
+// const App = () => {
+//   return (
+//     <>
+     
+        
+//         <Routes>
+//          <Route path='/adminDashboard' element={<AdminDashboard/>} />
+
+
+//         </Routes>
+     
+//     </>
+//   );
+// };
+
+
+// export default App;
+
 
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
@@ -12,7 +34,7 @@ import Homepage from './pages/Homepage';
 import DashboardPage from './pages/DashboardPage';
 import React from 'react';
 import AdminSidebar from './Components/Dashboard/AdminSidebar';
-import AdminDashboard from './Components/Dashboard/AdminDashboard';
+import AdminDashboard from "./Components/Dashboard/adminDashboard";
 import './index.css'
 
 

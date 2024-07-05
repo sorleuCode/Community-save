@@ -8,7 +8,7 @@ const Dashboard = () => {
     { id: 1, name: 'nitro eef', phone: '(414) 907 - 1274', location: 'United States', email: 'bode@gmail.com' },
     { id: 2, name: 'Hayzed', phone: '(414) 907 - 1274', location: 'Lagos State', email: 'hayzed@gmail.com' },
     { id: 3, name: 'Soliu', phone: '(414) 907 - 1274', location: 'Lagos State', email: 'soliu@gmail.com' },
-    { id: 4, name: 'Oloye', phone: '(414) 907 - 1274', location: 'Lagos State', email: 'oloye@gmail.com' },
+    { id: 4, name: 'Oloye', phone: '(414) 907 - 1274', location: 'Kano State', email: 'oloye@gmail.com' },
     { id: 5, name: 'Tumise', phone: '(414) 907 - 1274', location: 'Lagos State', email: 'tumise@gmail.com' },
     { id: 6, name: 'Zainab', phone: '(414) 907 - 1274', location: 'Lagos State', email: 'zainab@gmail.com' },
     { id: 7, name: 'Basirat', phone: '(414) 907 - 1274', location: 'Lagos State', email: 'basirat@gmail.com' },
@@ -40,15 +40,29 @@ const Dashboard = () => {
     setCurrentMember(null);
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem('authToken');
+  
+    window.location.href = '/login';
+  
+    console.log('User logged out');
+  };
+  
+
   const stats = [
-    { id: 1, label: 'Total Members', value: members.length, icon: '👥', color: '#e0b3ff' },
-    { id: 2, label: 'New Members', value: 15, icon: '🧑‍🤝‍🧑', color: '#ffddb3' },
-    { id: 3, label:'Active Conteributions', value: 3, icon: '💼', color: '#b3ffcc' },
-    { id: 4, label: 'Completed Ajo', value: 20, icon: '🔵', color: '#b3d9ff' },
+    { id: 1, label: 'Total Members', value: members.length, color: '#e0b3ff' },
+    { id: 2, label: 'New Members', value: 15, color: '#ffddb3' },
+    { id: 3, label: 'Ongoing Contributions', value: 3, color: '#b3ffcc' },
+    { id: 4, label: 'Completed Ajo', value: 20, color: '#b3d9ff' },
   ];
 
   return (
     <div className="dashboard">
+      {/* <div className="user-profile">
+        <img src="/oy.jpg" alt="use" className='eef' />
+        <h3>Nitro Eef</h3>
+        <button className="logout-button" onClick={handleLogout}>Log Out</button>
+      </div> */}
       {!isEditing ? (
         <>
           <div className="stats">
@@ -128,8 +142,8 @@ const Dashboard = () => {
                   onChange={(e) => setCurrentMember({ ...currentMember, email: e.target.value })}
                 />
               </div>
-              <button className="button one" onClick={handleSave}>Save</button>
-              <button className="button two" onClick={handleCancel}>Cancel</button>
+              <button className="button one" type="button" onClick={handleSave}>Save</button>
+              <button className="button two" type="button" onClick={handleCancel}>Cancel</button>
             </form>
           </div>
         </div>
