@@ -1,5 +1,5 @@
 
-// import React from 'react';
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { PaymentProvider } from './Context/PaymentContext';
 import Login from './Components/Auth/Login';
@@ -8,6 +8,11 @@ import Dashboard from './Components/Dashboard/Dashboard';
 import Recover from './Components/Auth/Recover';
 import Homepage from './pages/Homepage';
 import DashboardPage from './pages/DashboardPage';
+import React from 'react';
+import AdminSidebar from './Components/Dashboard/AdminSidebar';
+import AdminDashboard from './Components/Dashboard/AdminDashboard';
+import './index.css'
+
 
 
 const App = () => {
@@ -30,13 +35,8 @@ const App = () => {
         </Routes>
       </PaymentProvider>
     </>
-// function App() {
-//   return (
-//     <div className="App">
-//       <Dashboard />
-//       <PaymentHistory/>
-//     </div>
+
   );
-}
+};
 
 export default App;
