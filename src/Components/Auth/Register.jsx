@@ -1,16 +1,20 @@
+
+import  { useState, useContext } from 'react';
+import "../Auth/register.css"
+import  {PaymentContext}  from '../../Context/PaymentContext';
 import  { useState,  } from 'react'; // useContext
 import "./register.css"
 // import { Link } from "react-router-dom";
 import PasswordInput from '../passwordInput/passwordInput';
 
 // import  {PaymentContext}  from '../../Context/PaymentContext';
-
 const Register = () => {
   const [email, setEmail] = useState('');
   const [firstName, setFirstName] = useState("")
   const [lastName, setLastName] = useState("")
-  const [password, ] = useState('');
-  const [confirmpassword, ] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmpassword, setConfirmPassword] = useState('');
+  const { register } = useContext(PaymentContext);
   
   // const { register } = useContext(PaymentContext);
 
@@ -20,9 +24,9 @@ const Register = () => {
       // await register(email, password);
     } catch (err) {
       console.error(err);
+
     }
   };
-
   return (
     <form className='container_reg' onSubmit={handleSubmit}>
       <p>Email Address</p>
@@ -79,6 +83,3 @@ const Register = () => {
 };
 
 export default Register;
-
-
-
