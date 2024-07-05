@@ -1,9 +1,19 @@
 .dashboard {
   display: flex;
-  flex-direction: column;
-  padding: 4rem
+  flex-direction:column;
+padding:4rem 7rem;
 }
 
+.user-profile{
+  display:flex;
+  justify-content: end;
+}
+
+.eef{
+  width:42px;
+  height:43px;
+  border-radius: 55px;
+}
 .stats {
   display: flex;
   justify-content: space-between;

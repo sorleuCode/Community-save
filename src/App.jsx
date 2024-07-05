@@ -1,5 +1,4 @@
 // import React from 'react';
-// import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // import AdminDashboard from './Components/Dashboard/AdminDashboard';
 
 
@@ -25,7 +24,7 @@
 
 import React from 'react';
 import AdminSidebar from './Components/Dashboard/AdminSidebar';
-import AdminDashboard from './Components/Dashboard/AdminDashboard';
+import AdminDashboard from "./Components/Dashboard/adminDashboard";
 import './index.css'
 
 
