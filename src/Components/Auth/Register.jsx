@@ -20,6 +20,7 @@ const Register = () => {
     }
   };
 
+  
   return (
     <form className="regForm" onSubmit={handleSubmit}>
       <p>Email Address</p>
