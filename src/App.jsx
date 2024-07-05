@@ -30,8 +30,7 @@ const App = () => {
       </PaymentProvider>
     </>
 
-
   );
-};
+}
 
 export default App;
