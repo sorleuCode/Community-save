@@ -1,0 +1,80 @@
+.logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    color: #5dd657;
+  }
+  
+  .logo h2 {
+    margin-left: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(94, 223, 92);
+    font-weight:900;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+  }
+  
+  .sidebar-container {
+    display: flex;
+  }
+  
+  .sidebar {
+    width: 250px;
+    background-color: #FFFFFF;
+    color: black;
+    padding: 20px;
+    height: 100vh;
+  }
+  
+  .active {
+    font-size: 20px;
+    font-weight: 500;
+  }
+  
+  .icon {
+    font-size: 20px;
+    margin-right: 10px;
+  }
+  
+  
+  .sidebar h1 {
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+  
+  .sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar nav ul li {
+    padding: 15px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+  }
+  
+  .sidebar nav ul li:hover {
+    background-color: #5dd657;
+    border-radius: 5px;
+    color: white;
+  
+  }
+  
+  .sidebar nav ul li.active {
+    background-color: #5dd657;
+    color: white;
+  
+    /* font-size: 40px; */
+  }
+
+ 

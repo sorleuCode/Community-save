@@ -1,10 +1,16 @@
+
 import React from "react";
 import "./Dashboard.css";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { CgProfile } from "react-icons/cg";
 import { FaRegCircle } from "react-icons/fa";
+import React, { useContext } from 'react';
+import { PaymentContext } from '../../Context/PaymentContext';
+import PaymentHistory from '../Dashboard/PaymentHistory';
 
 const Dashboard = () => {
+  const { payments, user } = useContext(PaymentContext);
+  
   return (
     <div className="main-content">
       <nav className="navs">
@@ -104,5 +110,5 @@ const Dashboard = () => {
     </div>
   );
 };
-
 export default Dashboard;
+
