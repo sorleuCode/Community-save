@@ -1,16 +1,16 @@
-import React from 'react';
-import Dashboard from './Components/Dashboard/Dashboard';
-import PaymentHistory from './Components/Dashboard/PaymentHistory';
-
-
-
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./Components/Home/Home";
+import UserReg from "./Components/Register/UserReg";
+// import './App.css'
 
 function App() {
   return (
-    <div className="App">
-      <Dashboard />
-      <PaymentHistory/>
-    </div>
+   
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/register" element={<UserReg />} />
+      </Routes>
+   
   );
 }
 
