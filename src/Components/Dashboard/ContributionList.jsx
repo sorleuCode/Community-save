@@ -66,10 +66,10 @@ const ContributionList = ({ contributions, onEdit, onDelete }) => {
                 <p className="contribution-details fr"><strong>Date:</strong> {contribution.date}</p>
                 <p className="contribution-details fr"><strong>Status:</strong> {contribution.status}</p>
               </div>
-              <div className="contribution-actions">
+              {/* <div className="contribution-actions">
                 <button onClick={() => onEdit(contribution, index)} className="edit-button"><FaEdit size={20} /></button>
                 <button onClick={() => onDelete(index)} className="delete-button"><FaTrash size={20} /></button>
-              </div>
+              </div> */}
             </li>
           ))}
         </ul>

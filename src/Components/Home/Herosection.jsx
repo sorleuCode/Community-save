@@ -34,7 +34,7 @@ const Herosection = () => {
             <button className='btn-see-more'>See More</button>
             </div>
             <div className='how'>
-                How it works
+                How it works 
             </div>
             <div className='how-it-work'>
                
