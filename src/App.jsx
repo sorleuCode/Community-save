@@ -29,13 +29,10 @@ import About from './Components/aboutus/About';
 import BlogPage from './Components/blogpage/BlogPage';
 import Register from './Components/Auth/Register';
 import Dashboard from './Components/Dashboard/Dashboard';
+import Contact from './Components/Contact/Contact';
 import Recover from './Components/Auth/Recover';
-import Homepage from './pages/Homepage';
-import DashboardPage from './pages/DashboardPage';
-import React from 'react';
-import AdminSidebar from './Components/Dashboard/AdminSidebar';
-import AdminDashboard from "./Components/Dashboard/adminDashboard";
 import './index.css'
+
 
 
 
@@ -54,6 +51,7 @@ const App = () => {
           <Route path="/blog" element={<BlogPage/>} />
           {/* <Route path="/footer" element={<Footer/>} /> */}
           <Route path="/" element={<Login/>} />
+          <Route path="/contact" element={<Contact/>} />
 
         </Routes>
       </PaymentProvider>
