@@ -1,126 +1,49 @@
-import React, { useState, useEffect } from "react";
-import { FaPiggyBank, FaHistory } from "react-icons/fa";
-import { IoHomeOutline, IoBagHandleOutline } from "react-icons/io5";
-import { CiWallet } from "react-icons/ci";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { FaPiggyBank, FaHistory, FaEdit } from "react-icons/fa";
+import { IoAddCircleSharp, IoBagHandleOutline } from "react-icons/io5";
 import { PiHandWithdrawBold } from "react-icons/pi";
+import { ToastContainer, toast } from 'react-toastify';
+import Modal from 'react-modal';
+import 'react-toastify/dist/ReactToastify.css';
 import "./AdminSidebar.css";
 
-const Modal = ({ show, onClose, children }) => {
-  if (!show) return null;
-  
-  return (
-    <div className="modal">
-      <div className="modal-content">
-        <span className="close" onClick={onClose}>&times;</span>
-        {children}
-      </div>
-    </div>
-  );
-};
-
-const OngoingContributionsContent = () => {
-  return (
-    <div className="ongoingcontribution">
-      <h3>Ongoing Contributions</h3>
-      <ul>
-        <li>Contribution 1: $100</li>
-        <li>Contribution 2: $200</li>
-        <li>Contribution 3: $300</li>
-      </ul>
-    </div>
-  );
-};
-
-const AddContributionContent = ({ onSubmit }) => {
-  const [amount, setAmount] = useState('');
-  const [description, setDescription] = useState('');
-  const [date, setDate] = useState('');
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onSubmit({ amount, description, date });
-  };
-
-  return (
-    <div>
-      <h3>Add New Contribution</h3>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Amount:</label>
-          <input
-            type="number"
-            value={amount}
-            onChange={(e) => setAmount(e.target.value)}
-            required
-          />
-        </div>
-
-        <div>
-          <label>Description:</label>
-          <input
-            type="text"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            required
-          />
-        </div>
-
-        <div>
-          <label>Date:</label>
-          <input
-            type="date"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
-            required
-          />
-        </div>
-        <button type="submit">Add Contribution</button>
-      </form>
-    </div>
-  );
-};
+Modal.setAppElement('#root'); // Set the root element for accessibility
 
 const AdminSidebar = () => {
-  const [modalContent, setModalContent] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [profilePicture, setProfilePicture] = useState('/th.jpg');
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const navigate = useNavigate();
 
-//   useEffect(() => {
-//     setModalContent('Dashboard Content');
-//   }, []);
-
-  const handleOpenModal = (content) => {
-    setModalContent(content);
-    setIsModalOpen(true);
+  const handleLogout = () => {
+    localStorage.removeItem('authToken');
+    window.location.href = '/login';
+    console.log('User logged out');
   };
 
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-    setModalContent('Dashboard Content');
-  };
-
-  const handleAddContribution = (newContribution) => {
-    console.log("New Contribution Added:", newContribution);
-    // Handle the new contribution data
-    handleCloseModal();
-  };
-
-  const renderModalContent = () => {
-    switch (modalContent) {
-      case 'Dashboard Content':
-        return <div>Dashboard Content</div>;
-      case 'Ongoing Contributions Content':
-        return <OngoingContributionsContent />;
-      case 'Add Contribution Content':
-        return <AddContributionContent onSubmit={handleAddContribution} />;
-      case 'Wallets Content':
-        return <div>Wallets Content</div>;
-      case 'History Content':
-        return <div>History Content</div>;
-      case 'Withdraw Content':
-        return <div>Withdraw Content</div>;
-      default:
-        return null;
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setProfilePicture(reader.result);
+        closeModal();
+        toast.success('Profile picture updated successfully!', {
+          position: toast.POSITION.TOP_RIGHT,
+          autoClose: 3000, // Close the toast after 3 seconds
+          onClose: () => navigate('/home') // Navigate to the homepage after the toast closes
+        });
+      };
+      reader.readAsDataURL(file);
     }
+  };
+
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
   };
 
   return (
@@ -129,36 +52,56 @@ const AdminSidebar = () => {
         <FaPiggyBank size={30} />
         <h2>iSave</h2>
       </div>
-
-     
       <nav className="active">
         <ul>
-          {/* <li onClick={() => handleOpenModal('Dashboard Content')}><IoHomeOutline className="icon" />Dashboard</li> */}
-          <li onClick={() => handleOpenModal('Ongoing Contributions Content')}><IoBagHandleOutline className="icon"/>Ongoing Contributions</li>
-          <li onClick={() => handleOpenModal('Add Contribution Content')}><IoBagHandleOutline className="icon"/>Add New Contribution</li>
-          <li onClick={() => handleOpenModal('Wallets Content')}><CiWallet className="icon"/>Wallets</li>
-          <li onClick={() => handleOpenModal('History Content')}><FaHistory className="icon"/>History</li>
-          <li onClick={() => handleOpenModal('Withdraw Content')}><PiHandWithdrawBold className="icon"/>Withdraw</li>
+          <li><Link to="/admin-dashboard"><FaPiggyBank className="icon"/>Dashboard</Link></li>
+          <li><Link to="/contributionlist"><IoBagHandleOutline className="icon"/>Contributions List</Link></li>
+          <li><Link to="/add-contribution"><IoAddCircleSharp className="icon"/>Add New Contribution</Link></li>
+          <li><Link to="/edit-admin"><FaEdit className="icon"/>Edit profile</Link></li>
+          <li><Link to="/history"><FaHistory className="icon"/>Payment History</Link></li>
+          <li><Link to="/withdraw"><PiHandWithdrawBold className="icon"/>Withdraw</Link></li>
         </ul>
       </nav>
 
-
-
-      <div className="content">
-        {isModalOpen ? (
-          <Modal show={isModalOpen} onClose={handleCloseModal}>
-            {renderModalContent()}
-          </Modal>
-        ) : (
-          <div className="default-content">
-            
+      <div className="profile-picture">
+        <div className="profile-picture-container">
+          <div className="profile-info">
+            <img
+              src={profilePicture}
+              alt="user"
+              className='eef'
+              onClick={openModal}
+            />
+            <div className="profile">
+              <h3 className="nitro">Nitro Eef</h3>
+            </div>
           </div>
-        )}
+          <button className="grand-button" onClick={handleLogout}>Log Out</button>
+        </div>
       </div>
 
-    
+      <input
+        type="file"
+        id="fileInput"
+        style={{ display: 'none' }}
+        onChange={handleFileChange}
+      />
+
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        contentLabel="Profile Picture Modal"
+        className="modal"
+        overlayClassName="modal-overlay"
+      >
+        {/* <h2 className="omoprof">Profile Picture</h2> */}
+        <button onClick={() => document.getElementById('fileInput').click()}>Change Profile Picture</button>
+        <button onClick={() => toast.info('Viewing Profile Picture', { position: toast.POSITION.TOP_RIGHT })}>View Profile Picture</button>
+        <button onClick={closeModal}>Close</button>
+      </Modal>
+
+      <ToastContainer />
     </div>
-    
   );
 };
 
