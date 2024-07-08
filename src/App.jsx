@@ -31,6 +31,17 @@ const App = () => {
       JSON.parse(localStorage.getItem("contributions")) || [];
     setContributions(storedContribution);
   }, []);
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { PaymentProvider } from './Context/PaymentContext';
+import Login from './Components/Auth/Login';
+import About from './Components/aboutus/About';
+import BlogPage from './Components/blogpage/BlogPage';
+import Register from './Components/Auth/Register';
+import Dashboard from './Components/Dashboard/Dashboard';
+import Contact from './Components/Contact/Contact';
+import Recover from './Components/Auth/Recover';
+import './index.css'
 
   const navigate = useNavigate();
   const handleSubmit = (e) => {
@@ -79,6 +90,24 @@ const App = () => {
           path="/contributionlist"
           element={<ContributionList contributions={contributions} />}
         />
+
+
+const App = () => {
+  return (
+    <>
+      <PaymentProvider>
+        
+        <Routes>
+          <Route path="/login" element={<Login/>} />
+          <Route path="/recover" element={<Recover/>} />
+          <Route path="/register" element={<Register/>} />
+          {/* <PrivateRoute path="/dashboard" element={Dashboard} /> */}
+          <Route path="/dashboard" element={<Dashboard/>} />
+          <Route path="/about" element={<About/>} />
+          <Route path="/blog" element={<BlogPage/>} />
+          {/* <Route path="/footer" element={<Footer/>} /> */}
+          <Route path="/" element={<Login/>} />
+          <Route path="/contact" element={<Contact/>} />
 
         <Route path="/" element={<AdminDashboard />} />
       </Routes>
