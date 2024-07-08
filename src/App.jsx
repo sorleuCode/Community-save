@@ -4,6 +4,8 @@ import { PaymentProvider } from './Context/PaymentContext';
 import Login from './Components/Auth/Login';
 import Register from './Components/Auth/Register';
 import Dashboard from './Components/Dashboard/Dashboard';
+import Contact from './Components/Contact/Contact';
+
 
 
 const App = () => {
@@ -17,6 +19,7 @@ const App = () => {
           {/* <PrivateRoute path="/dashboard" element={Dashboard} /> */}
           <Route path="/dashboard" element={<Dashboard/>} />
           <Route path="/" element={<Login/>} />
+          <Route path="/contact" element={<Contact/>} />
 
         </Routes>
       </PaymentProvider>
