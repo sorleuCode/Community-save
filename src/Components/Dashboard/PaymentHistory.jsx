@@ -1,5 +1,11 @@
-import React from 'react';
+/// **  Payment History **//
+
+import React, { useState } from 'react';
+
 import './PaymentHistory.css';
+
+
+import AdminSidebar from './AdminSidebar';
 
 const PaymentHistory = () => {
   const payments = [
@@ -11,16 +17,29 @@ const PaymentHistory = () => {
     { date: 'Mar 1, 2023', amount: 100, status: 'Received' },
   ];
 
+  const [filter, setFilter] = useState('All');
+
+  const handleFilterChange = (newFilter) => {
+    setFilter(newFilter);
+  };
+
+  const filteredPayments = payments.filter(payment => {
+    if (filter === 'All') return true;
+    return payment.status === filter;
+  });
+
   return (
+    <div className="theway">
     <div className="payment-history">
-      <h2>Payment History</h2>
+
+      <h1>Payment History</h1>
       <div className="filters">
-        <button className='btn'>All</button>
-        <button className='btn'>Received</button>
-        <button className='btn'>Sent</button>
+        <button className='btn' onClick={() => handleFilterChange('All')}>All</button>
+        <button className='btn' onClick={() => handleFilterChange('Received')}>Received</button>
+        <button className='btn' onClick={() => handleFilterChange('Sent')}>Sent</button>
       </div>
     
-    <table>
+      <table>
         <thead>
           <tr>
             <th>Date</th>
@@ -29,7 +48,7 @@ const PaymentHistory = () => {
           </tr>
         </thead>
         <tbody>
-          {payments.map((payment, index) => (
+          {filteredPayments.map((payment, index) => (
             <tr key={index}>
               <td>{payment.date}</td>
               <td>{payment.amount}</td>
@@ -38,7 +57,7 @@ const PaymentHistory = () => {
           ))}
         </tbody>
       </table>
-    
+    </div>
     </div>
   );
 }
