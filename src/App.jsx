@@ -90,33 +90,3 @@ const App = () => {
 
 export default App;
 
-// import React from 'react';
-// import { Routes, Route, useLocation } from 'react-router-dom';
-// import AdminSidebar from './Components/Dashboard/AdminSidebar';
-// import AddContribution from './Components/Dashboard/AddContribution';
-// import ContributionManager from './Components/Dashboard/ContributionManager';
-// import ContributionList from './Components/Dashboard/ContributionList';
-// // import Home from './Components/Home';
-// import AdminDashboard from './Components/adminDashboard';
-// import './App.css'; // Add a CSS file to style the main container
-
-// const App = () => {
-//   const location = useLocation();
-
-//   return (
-//     <div className="app-container">
-//       {(location.pathname.includes('admin-dashboard') || location.pathname.includes('list-of-contribution') || location.pathname.includes('add-contribution') || location.pathname.includes('edit-admin') || location.pathname.includes('history') || location.pathname.includes('withdraw')) && <AdminSidebar />}
-//       <Routes>
-//         <Route path="/" element={<Home />} />
-//         <Route path="/admin-dashboard" element={<adminDashboard />} />
-//         <Route path="/list-of-contribution" element={<ContributionList />} />
-//         <Route path="/add-contribution" element={<ContributionManager />} />
-//         <Route path="/edit-admin" element={<div>Edit Admin Profile</div>} />
-//         <Route path="/history" element={<div>Payment History</div>} />
-//         <Route path="/withdraw" element={<div>Withdraw</div>} />
-//       </Routes>
-//     </div>
-//   );
-// };
-
-// export default App;

@@ -1,22 +1,21 @@
-.bode {
+.nitroeef {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  min-height: 100vh;
+  margin: 0 auto; /* Ensure it takes up at least the full viewport height */
 }
 
 .add-contribution {
   padding: 20px;
-  background-color: #d5ded5a7;
+  background-color: #88b488a7;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   max-width: 500px;
-  width: 355px;
-  height: auto;
+  width:415px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0 auto; /* This centers the element horizontally */
 }
 
 .add-contribution h2 {

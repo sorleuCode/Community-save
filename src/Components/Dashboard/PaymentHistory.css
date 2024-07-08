@@ -1,6 +1,14 @@
+ 
+ .theway{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  height: 100vh;
+}
+ 
  .payment-history {
   font-family: 'Poppins', sans-serif;
-  height: 100vh;
   width:100%;
   align-items: center;
 justify-content: center;
@@ -54,6 +62,26 @@ justify-content: center;
   background-color: #f3f4f6;
   font-weight: bold;
 }
+
+
+.logo-link {
+  color: #25be14; 
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.logo-link:hover {
+  color: #333; /* Adjust hover color as needed */
+}
+
+.logo-icon {
+  font-size: 74px; /* Adjust icon size as needed */
+  margin-right: 5px; 
+}
+
+
+
 
 .payment-history table .received {
   color: #0ead69;
