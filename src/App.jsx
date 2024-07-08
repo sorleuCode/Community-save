@@ -1,3 +1,7 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./Components/Home/Home";
+import UserReg from "./Components/Register/UserReg";
+// import './App.css'
 import React, { useEffect } from "react";
 import { useState } from "react";
 import AdminSidebar from "./Components/Dashboard/AdminSidebar";
@@ -98,10 +102,12 @@ const App = () => {
       <PaymentProvider>
         
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login/>} />
           <Route path="/recover" element={<Recover/>} />
           <Route path="/register" element={<Register/>} />
-          {/* <PrivateRoute path="/dashboard" element={Dashboard} /> */}
+          <Route path="/register" element={<UserReg />} />
+            {/* <PrivateRoute path="/dashboard" element={Dashboard} /> */}
           <Route path="/dashboard" element={<Dashboard/>} />
           <Route path="/about" element={<About/>} />
           <Route path="/blog" element={<BlogPage/>} />
@@ -148,4 +154,3 @@ export default App;
 //   );
 // };
 
-// export default App;
