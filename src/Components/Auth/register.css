@@ -26,7 +26,7 @@ body {
     border-radius: 4px;
   }
   
-  button {
+  .registerbutt {
     width: 100%;
     padding: 10px 15px;
     background-color: #0EAD69;

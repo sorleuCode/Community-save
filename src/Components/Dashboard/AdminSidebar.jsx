@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaPiggyBank, FaHistory, FaEdit } from "react-icons/fa";
 import { IoAddCircleSharp, IoBagHandleOutline } from "react-icons/io5";
-import { PiHandWithdrawBold } from "react-icons/pi";
+import { PiDiceFive, PiHandWithdrawBold } from "react-icons/pi";
 import { ToastContainer, toast } from 'react-toastify';
 import Modal from 'react-modal';
 import 'react-toastify/dist/ReactToastify.css';
@@ -59,7 +59,7 @@ const AdminSidebar = () => {
           <li><Link to="/add-contribution"><IoAddCircleSharp className="icon"/>Add New Contribution</Link></li>
           <li><Link to="/edit-admin"><FaEdit className="icon"/>Edit profile</Link></li>
           <li><Link to="/history"><FaHistory className="icon"/>Payment History</Link></li>
-          <li><Link to="/withdraw"><PiHandWithdrawBold className="icon"/>Withdraw</Link></li>
+          <li><Link to="/roll"><PiDiceFive className="icon"/>Roll it</Link></li>
         </ul>
       </nav>
 

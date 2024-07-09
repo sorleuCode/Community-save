@@ -21,11 +21,13 @@ const PaymentHistory = () => {
   const [filter, setFilter] = useState("All");
 
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import './PaymentHistory.css';
 
 
 import AdminSidebar from './AdminSidebar';
+import { FaArrowAltCircleLeft } from 'react-icons/fa';
 
 const PaymentHistory = () => {
   const payments = [
@@ -107,6 +109,9 @@ const PaymentHistory = () => {
         <button className='btn' onClick={() => handleFilterChange('All')}>All</button>
         <button className='btn' onClick={() => handleFilterChange('Received')}>Received</button>
         <button className='btn' onClick={() => handleFilterChange('Sent')}>Sent</button>
+        <Link to="/admin-dashboard" className="logo-link">
+      <FaArrowAltCircleLeft/>
+      </Link>
       </div>
     
       <table>

@@ -21,7 +21,7 @@ const AddContribution = ({
 
 
     
-    <div className="bode">
+    <div className="nitroeef">
       <div className="add-contribution">
         <h2>Add New Contribution</h2>
         <form onSubmit={handleSubmit}>
@@ -47,6 +47,7 @@ const AddContribution = ({
             <label>Description</label>
             <textarea
               value={description}
+              className="texttroy"
               onChange={(e) => setDescription(e.target.value)}
               required
             />
