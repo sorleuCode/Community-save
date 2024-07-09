@@ -42,6 +42,13 @@ import Login from './Components/Auth/Login';
 import About from './Components/aboutus/About';
 import BlogPage from './Components/blogpage/BlogPage';
 import Register from './Components/Auth/Register';
+
+import DashboardPage from './pages/DashboardPage';
+import PaymentHistory from './Components/Dashboard/PaymentHistory';
+import EditProfile from './Components/Dashboard/EditProfile';
+import ContributionList from './Components/Dashboard/ContributionList';
+
+
 import Dashboard from './Components/Dashboard/Dashboard';
 import Contact from './Components/Contact/Contact';
 import Selector from './Components/Selector/Selector';
@@ -107,6 +114,13 @@ const App = () => {
           <Route path="/login" element={<Login/>} />
           <Route path="/recover" element={<Recover/>} />
           <Route path="/register" element={<Register/>} />
+
+          <Route path="/dashboard" element={<DashboardPage/>} />
+          <Route path="/" element={<Login/>} />
+          <Route path="/PaymentHistory" element={<PaymentHistory/>} />
+          <Route path="/editProfile" element={<EditProfile/>} />
+          <Route path="/Contribution" element={<ContributionList/>} />
+
           <Route path="/register" element={<UserReg />} />
             {/* <PrivateRoute path="/dashboard" element={Dashboard} /> */}
           <Route path="/dashboard" element={<Dashboard/>} />
@@ -116,6 +130,7 @@ const App = () => {
           <Route path="/" element={<Login/>} />
           <Route path="/contact" element={<Contact/>} />
           <Route path="/selector" element={<Selector/>} />
+
 
         <Route path="/" element={<AdminDashboard />} />
       </Routes>
@@ -127,32 +142,4 @@ const App = () => {
 
 export default App;
 
-// import React from 'react';
-// import { Routes, Route, useLocation } from 'react-router-dom';
-// import AdminSidebar from './Components/Dashboard/AdminSidebar';
-// import AddContribution from './Components/Dashboard/AddContribution';
-// import ContributionManager from './Components/Dashboard/ContributionManager';
-// import ContributionList from './Components/Dashboard/ContributionList';
-// // import Home from './Components/Home';
-// import AdminDashboard from './Components/adminDashboard';
-// import './App.css'; // Add a CSS file to style the main container
-
-// const App = () => {
-//   const location = useLocation();
-
-//   return (
-//     <div className="app-container">
-//       {(location.pathname.includes('admin-dashboard') || location.pathname.includes('list-of-contribution') || location.pathname.includes('add-contribution') || location.pathname.includes('edit-admin') || location.pathname.includes('history') || location.pathname.includes('withdraw')) && <AdminSidebar />}
-//       <Routes>
-//         <Route path="/" element={<Home />} />
-//         <Route path="/admin-dashboard" element={<adminDashboard />} />
-//         <Route path="/list-of-contribution" element={<ContributionList />} />
-//         <Route path="/add-contribution" element={<ContributionManager />} />
-//         <Route path="/edit-admin" element={<div>Edit Admin Profile</div>} />
-//         <Route path="/history" element={<div>Payment History</div>} />
-//         <Route path="/withdraw" element={<div>Withdraw</div>} />
-//       </Routes>
-//     </div>
-//   );
-// };
 

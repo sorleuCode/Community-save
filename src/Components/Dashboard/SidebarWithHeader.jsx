@@ -1,69 +1,15 @@
-import React, { useState, useEffect } from "react";
+// SidebarWithHeader.js
+import React from "react";
 import { FaPiggyBank, FaHistory } from "react-icons/fa";
 import { IoHomeOutline, IoBagHandleOutline } from "react-icons/io5";
-import { CiWallet } from "react-icons/ci";
-import { PiHandWithdrawBold } from "react-icons/pi";
+import { FaUserEdit } from "react-icons/fa";
 import "./SidebarWithHeader.css";
-
-const Modal = ({ show, onClose, children }) => {
-  if (!show) return null;
-  
-  return (
-    <div className="modal">
-      <div className="modal-content">
-        <span className="close" onClick={onClose}>&times;</span>
-        {children}
-      </div>
-    </div>
-  );
-};
-
-const OngoingContributionsContent = () => {
-  return (
-    <div className="contrib">
-      <h3>Ongoing Contributions</h3>
-      <ul>
-        <li>Contribution 1: $100</li>
-        <li>Contribution 2: $200</li>
-        <li>Contribution 3: $300</li>
-      </ul>
-    </div>
-  );
-};
+import { CgProfile } from "react-icons/cg";
+import { Link } from "react-router-dom";
 
 const SidebarWithHeader = () => {
-  const [modalContent, setModalContent] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  useEffect(() => {
-    setModalContent('Dashboard Content');
-  }, []);
-
-  const handleOpenModal = (content) => {
-    setModalContent(content);
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-    setModalContent('Dashboard Content');
-  };
-
-  const renderModalContent = () => {
-    switch (modalContent) {
-      case 'Dashboard Content':
-        return <div>Dashboard Content</div>;
-      case 'Ongoing Contributions Content':
-        return <OngoingContributionsContent />;
-      case 'Wallets Content':
-        return <div>Wallets Content</div>;
-      case 'History Content':
-        return <div>History Content</div>;
-      case 'Withdraw Content':
-        return <div>Withdraw Content</div>;
-      default:
-        return null;
-    }
+  const handleLogout = () => {
+    window.location.href = "/login";
   };
 
   return (
@@ -74,22 +20,40 @@ const SidebarWithHeader = () => {
       </div>
       <nav className="active">
         <ul>
-          <li onClick={() => handleOpenModal('Dashboard Content')}><IoHomeOutline className="icon" />Dashboard</li>
-          <li onClick={() => handleOpenModal('Ongoing Contributions Content')}><IoBagHandleOutline className="icon"/>Ongoing Contributions</li>
-          <li onClick={() => handleOpenModal('Wallets Content')}><CiWallet className="icon"/>Wallets</li>
-          <li onClick={() => handleOpenModal('History Content')}><FaHistory className="icon"/>History</li>
-          <li onClick={() => handleOpenModal('Withdraw Content')}><PiHandWithdrawBold className="icon"/>Withdraw</li>
+          <Link to="/dashboard">
+            <li>
+              <IoHomeOutline className="icon" />
+              <p>Dashboard</p>
+            </li>
+          </Link>
+          <Link to="/Contribution">
+          <li>
+            <IoBagHandleOutline className="icon" />
+            Contribution List
+          </li></Link>
+          <Link to="/PaymentHistory">
+            <li>
+              <FaHistory className="icon" />
+              Payment History
+            </li>
+          </Link>
+          <Link to="/editProfile">
+            <li>
+              <FaUserEdit className="icon" />
+              Edit Profile
+            </li>
+          </Link>
         </ul>
       </nav>
-      <div className="content">
-        {isModalOpen ? (
-          <Modal show={isModalOpen} onClose={handleCloseModal}>
-            {renderModalContent()}
-          </Modal>
-        ) : (
-          <div className="default-content">
-          </div>
-        )}
+
+      <div className="profile">
+        <h3 className="cgprofile">
+          <CgProfile />
+          Adejare02!
+        </h3>
+        <button className="logout-button" onClick={handleLogout}>
+          Logout
+        </button>
       </div>
     </div>
   );

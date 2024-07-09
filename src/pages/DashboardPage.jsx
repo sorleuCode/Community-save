@@ -4,13 +4,12 @@ import Dashboard from "../Components/Dashboard/Dashboard";
 
 const DashboardPage = () => {
   return (
-    <div style={{display: "flex"}}>
-      <SidebarWithHeader/>
+    <div style={{ display: "flex" }}>
+      <SidebarWithHeader />
+
       <Dashboard />
-   
-  
     </div>
-  )
+  );
 };
 
 export default DashboardPage;
