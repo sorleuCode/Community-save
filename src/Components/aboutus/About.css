@@ -1,0 +1,63 @@
+/* src/Components/aboutus/About.css */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .navbar-logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .navbar-links {
+    display: flex;
+    list-style: none;
+  }
+  
+  .navbar-links li {
+    margin: 0 10px;
+  }
+  
+  .navbar-login {
+    padding: 5px 10px;
+    background-color: #fff;
+    color: #333;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .scon {
+    padding : 2rem 7rem;
+  }
+  
+  .scon h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .scon p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .life {
+    margin-bottom: 20px;
+    padding-left: 25px;
+  }
+  
+  .life li {
+    margin-bottom: 10px;
+  }
+  
+  /* Add styles for Footer component */
+  .footer {
+    background-color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+  }
+  
