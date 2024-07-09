@@ -47,6 +47,7 @@ const AddContribution = ({
             <label>Description</label>
             <textarea
               value={description}
+              className="texttroy"
               onChange={(e) => setDescription(e.target.value)}
               required
             />

@@ -1,10 +1,10 @@
-.nitroeef {
+/* .nitroeef {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   margin: 0 auto; /* Ensure it takes up at least the full viewport height */
-}
+ */
 
 .add-contribution {
   padding: 20px;
@@ -63,7 +63,7 @@
   background-color: #0056b3;
 }
 
-textarea {
+.texttroy {
   width: 100%;
   padding: 10px;
   margin: 8px 0;

@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import './EditAdminProfile.css';
 
-const EditProfile = () => {
+const EditProfile = ({handleSubmit}) => {
   const [profile, setProfile] = useState({
     name: '',
     email: '',
@@ -47,28 +47,6 @@ const EditProfile = () => {
 
 
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await fetch('/api/admin/profile', {
-        method: 'PUT', // Use the appropriate method (PUT, PATCH, etc.)
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(profile),
-      });
-
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-
-      const result = await response.json();
-      console.log('Profile update result:', result);
-      setShowModal(true);
-    } catch (error) {
-      console.error('Error updating profile:', error);
-    }
-  };
 
   const closeModal = () => {
     setShowModal(false);
@@ -76,15 +54,12 @@ const EditProfile = () => {
 
   return (
     <div className="theway">
-      <div className="user-profile">
-   
-      </div>
-
+      
       <div className="edit-profile">
         <h2>Edit Profile</h2>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className='form-edit-profile' >
           <div>
-            <label>Name:</label>
+            <label className='leo'>Name:</label>
             <input
               type="text"
               name="name"
@@ -93,7 +68,7 @@ const EditProfile = () => {
             />
           </div>
           <div>
-            <label>Email:</label>
+            <label className='leo'>Email:</label>
             <input
               type="email"
               name="email"
@@ -101,8 +76,9 @@ const EditProfile = () => {
               onChange={handleChange}
             />
           </div>
+
           <div>
-            <label>Password:</label>
+            <label className='leo'>Password:</label>
             <input
               type="password"
               name="password"
@@ -112,7 +88,7 @@ const EditProfile = () => {
           </div>
          
          
-          <button type="submit">Save Changes</button>
+          <button type="submit" className='eef-profile-edit'>Save Changes</button>
         </form>
 
         {showModal && (

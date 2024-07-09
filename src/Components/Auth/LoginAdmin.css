@@ -1,0 +1,58 @@
+.login-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    height: 100vh;
+  }
+  
+  .formin {
+    max-width: 50%;
+    margin: 0 auto;
+    height: auto;
+    width:455px;
+    padding: 20px;
+    /* background: rgb(121, 29, 29); */
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  
+  
+  .putin {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #D7E1F4;
+    border-radius: 4px;
+  }
+  
+  #logging {
+    background-color: #4CAF50;
+    color: white;
+    padding: 11px 32px;
+    text-align: center;
+    gap:3rem;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 17px 2px;
+    cursor: pointer;
+    border: none; /* Optional: Remove border */
+    border-radius: 4px; /* Optional: Rounded corners */
+    transition: background-color 0.3s; /* Optional: Transition effect */
+  }
+  
+  .logging:hover {
+    background-color: #45a049; /* Optional: Darker green on hover */
+  }
+  
+  
+  
+  
+  #save{
+    color: rgb(138, 51, 51);
+    text-decoration: none;
+  }

@@ -2,16 +2,17 @@
 import  { useState, useContext } from 'react';
 import "../Auth/register.css"
 import  {PaymentContext}  from '../../Context/PaymentContext';
-import  { useState,  } from 'react'; // useContext
+// import  { useState,  } from 'react'; // useContext
 import "./register.css"
+import PasswordInput from '../passwordInput/PasswordInput';
 // import { Link } from "react-router-dom";
-import PasswordInput from '../passwordInput/passwordInput';
+// import PasswordInput from '../passwordInput/PasswordInput';
 
 // import  {PaymentContext}  from '../../Context/PaymentContext';
 const Register = () => {
   const [email, setEmail] = useState('');
-  const [firstName, setFirstName] = useState("")
-  const [lastName, setLastName] = useState("")
+  const [userName, setUserName] = useState("")
+  const [fullName, setFullName] = useState("")
   const [password, setPassword] = useState('');
   const [confirmpassword, setConfirmPassword] = useState('');
   const { register } = useContext(PaymentContext);
@@ -29,24 +30,30 @@ const Register = () => {
   };
   return (
     <form className='container_reg' onSubmit={handleSubmit}>
-      <p>Email Address</p>
-      <input type="email" placeholder='Wabdotmail@gmail.com'
-       value={email} onChange={(e) =>
+      
+      <label htmlFor="fullName" className='labellio'>Fullname:</label>
+
+      <input type="fullname" placeholder='Wabdot Olami'
+       value={fullName} onChange={(e) =>
         setEmail(e.target.value)} required />
 
-      <p>First Name</p>
-      <input type="firstName" placeholder='Wahab'
-       value={firstName} onChange={(e) => 
-        setFirstName(e.target.value)} required />
+      
+      <label htmlFor="email" className='labellio'>Email:</label>
 
-      <p>Last Name</p>
-      <input type="lastName" placeholder='Lawal' 
-      value={lastName} onChange={(e) => 
-        setLastName(e.target.value)} required />
+      <input type="email" placeholder='Wabdotmail@gmail.com'
+       value={email} onChange={(e) => 
+        setEmail(e.target.value)} required />
+
+      
+      <label htmlFor="UserName" className='labellio'>Username:</label>
+
+      <input type="name" placeholder='Lawal' 
+      value={userName} onChange={(e) => 
+        setUserName(e.target.value)} required />
 
 
 <div className="">
-            <label htmlFor="password">Password:</label>
+            <label htmlFor="password" className='labellio'>Password:</label>
             <PasswordInput
             type="password"
             className="input"
@@ -71,7 +78,7 @@ const Register = () => {
             />
           </div>
 
-      <button type="submit">Create Account</button>
+      <button type="submit" className='registerbutt'>Create Account</button>
       
     <div>
      {/* <p>

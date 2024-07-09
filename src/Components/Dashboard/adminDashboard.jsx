@@ -129,7 +129,7 @@ const AdminDashboard = () => {
   return (
     <div className="dashboard_wrapper">
       <AdminSidebar />
-      <div className="dashboard">
+      <div className="dashboarder">
         <div className="stats">
           {stats.map((stat) => (
             <div
@@ -148,7 +148,7 @@ const AdminDashboard = () => {
         {!isEditing ? (
           <div className="members-list">
             <h2>Total Members</h2>
-            <table>
+            <table className="tabili">
               <thead>
                 <tr>
                   <th>Name</th>
@@ -168,13 +168,13 @@ const AdminDashboard = () => {
                     <td>{member.email}</td>
                     <td>
                       <button
-                        className="bu ed"
+                        className="butt ed"
                         onClick={() => handleEdit(member)}
                       >
                         <FaPen />
                       </button>
                       <button
-                        className="bu del"
+                        className="butt del"
                         onClick={() => handleDelete(member.id)}
                       >
                         <FaTrashAlt />
@@ -229,6 +229,7 @@ const AdminDashboard = () => {
                     }
                   />
                 </div>
+
                 <div>
                   <label>Email</label>
                   <input
@@ -242,20 +243,24 @@ const AdminDashboard = () => {
                     }
                   />
                 </div>
+                
+                .
                 <button
-                  className="button one"
+                  className="botini"
                   type="button"
                   onClick={handleSave}
                 >
                   Save
                 </button>
+
                 <button
-                  className="button two"
+                  className="botinikeji"
                   type="button"
                   onClick={handleCancel}
                 >
                   Cancel
                 </button>
+                
               </form>
             </div>
           </div>

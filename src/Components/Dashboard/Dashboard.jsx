@@ -1,5 +1,3 @@
-
-import React from "react";
 import "./Dashboard.css";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { CgProfile } from "react-icons/cg";
@@ -15,9 +13,6 @@ const Dashboard = () => {
     <div className="main-content">
       <nav className="navs">
         <div>
-          <img src="/csavings.jpg" alt="" />
-        </div>
-        <div>
           <div className="notif">
             <div>
               <IoMdNotificationsOutline />
@@ -30,7 +25,7 @@ const Dashboard = () => {
         </div>
       </nav>
 
-      <header>
+      <header className="dashHeader">
         <div className="welcome">
           <h2>
             Welcome <span className="username">Adejare02!</span>
@@ -107,17 +102,11 @@ const Dashboard = () => {
           <div className="need-help-img">
             <img src="figma-1.jpg" alt="" />
           </div>
-          <div className="need-help-text">
-            {/* <h3>Need help?</h3> */}
-            {/* <p>
-              Contact us at 080-1234-5678 or email us at 080-1234-5678@example.com
-            </p> */}
-            {/* <img src="Frame-32.jpg" alt="" /> */}
-          </div>
+          <div className="need-help-text"></div>
         </div>
       </section>
     </div>
   );
 };
-
 export default Dashboard;
+
