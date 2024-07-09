@@ -1,0 +1,8 @@
+.EditProfile {
+    display: flex;
+    gap: 2rem;
+}
+
+.myImage img {
+    width: 10rem;
+}

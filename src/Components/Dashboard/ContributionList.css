@@ -1,17 +1,40 @@
+
+.ContributionList {
+  display: flex;
+  gap: 2rem;
+}
+
+.bodeleyi {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 20px;
+
 .bodeleyi{
   display:flex;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+
 }
 
 .contribution-list {
   max-width: 1200px; /* Increased max-width for wider display */
   margin: 0 auto;
   padding: 20px;
+
+
+
   background-color: #f8f9fa;
+
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.header {
+  display: flex;
 }
 
 
@@ -87,6 +110,7 @@
   font-size: 16px;
   color: #555;
 }
+
 
 
 

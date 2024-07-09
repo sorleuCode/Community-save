@@ -18,6 +18,8 @@ import Register from './Components/Auth/Register';
 import Dashboard from './Components/Dashboard/Dashboard';
 import Contact from './Components/Contact/Contact';
 import Recover from './Components/Auth/Recover';
+import DashboardPage from './pages/DashboardPage';
+
 import './index.css'
 
 
@@ -66,12 +68,15 @@ const App = () => {
     }
   };
 
-  return(
+
+const App = () => {
+  return (
     <>
       <PaymentProvider>
         
         <Routes>
-          <Route path="/login" element={<Login/>} />
+    
+    <Route path="/login" element={<Login/>} />
           <Route path="/recover" element={<Recover/>} />
           <Route path="/register" element={<Register/>} />
           {/* <PrivateRoute path="/dashboard" element={Dashboard} /> */}
@@ -106,7 +111,29 @@ const App = () => {
           path="/contributionlist"
           element={<ContributionList contributions={contributions} />}
         />
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login/>} />
+          <Route path="/recover" element={<Recover/>} />
+          <Route path="/register" element={<Register/>} />
 
+          <Route path="/dashboard" element={<DashboardPage/>} />
+          <Route path="/" element={<Login/>} />
+          <Route path="/PaymentHistory" element={<PaymentHistory/>} />
+          <Route path="/editProfile" element={<EditProfile/>} />
+          <Route path="/Contribution" element={<ContributionList/>} />
+
+          <Route path="/register" element={<UserReg />} />
+            {/* <PrivateRoute path="/dashboard" element={Dashboard} /> */}
+          <Route path="/dashboard" element={<Dashboard/>} />
+          <Route path="/about" element={<About/>} />
+          <Route path="/blog" element={<BlogPage/>} />
+          {/* <Route path="/footer" element={<Footer/>} /> */}
+          <Route path="/" element={<Login/>} />
+          <Route path="/contact" element={<Contact/>} />
+          <Route path="/selector" element={<Selector/>} />
+
+
+        <Route path="/" element={<AdminDashboard />} />
       </Routes>
       </PaymentProvider>
 
@@ -115,4 +142,3 @@ const App = () => {
 };
 
 export default App;
-
