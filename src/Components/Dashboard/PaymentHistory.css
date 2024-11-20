@@ -1,0 +1,64 @@
+ .payment-history {
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  width:100%;
+  align-items: center;
+justify-content: center;
+}
+
+.payment-history h1 {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.payment-history .filters {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.payment-history .filters .btn {
+  padding: 10px 20px;
+  border: 1px solid #000;
+  border-radius: 20px;
+  background-color: transparent;
+  color: #000;
+  cursor: pointer;
+}
+
+.payment-history .filters .btn:hover {
+  background-color: #DCFAED;
+}
+
+.payment-history table {
+  width: 445px;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border-collapse: collapse;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.payment-history table th,
+.payment-history table td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.payment-history table th {
+  background-color: #f3f4f6;
+  font-weight: bold;
+}
+
+.payment-history table .received {
+  color: #0ead69;
+}
+
+.payment-history table .sent {
+  color: #590240;
+}

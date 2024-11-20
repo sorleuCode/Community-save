@@ -1,0 +1,46 @@
+/* OngoingContributions.css */
+
+.ongoing-contributions {
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .ongoing-contributions h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .contribution-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .contribution-card {
+    background-color: #b3ffcc; /* Green background */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    margin: 10px;
+    width: 250px; /* Fixed width for each card */
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .contribution-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .contribution-card h4 {
+    margin-top: 0;
+    color: #007bff;
+  }
+  
+  .contribution-card p {
+    margin: 8px 0;
+    color: #555;
+  }
+  
